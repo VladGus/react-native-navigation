@@ -253,11 +253,12 @@ public class SingleScreenLayout extends BaseLayout {
 
     @Override
     public void showLightBox(LightBoxParams params) {
-        if (lightBox == null) {
+        // if (lightBox == null) {
+        if (lightBox == null || !lightBox.isShowing()) {
             lightBox = new LightBox(getActivity(), new Runnable() {
                 @Override
                 public void run() {
-                    lightBox = null;
+                    // lightBox = null;
                 }
             }, params);
             lightBox.show();
